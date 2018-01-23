@@ -6,9 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.felipe.rpgapp.Entity.Attribute;
-import com.example.felipe.rpgapp.Entity.Character;
+import com.example.felipe.rpgapp.Control.AbstractEntity;
+import com.example.felipe.rpgapp.Entity.PlayerChar;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
 import java.util.Locale;
 
 
@@ -69,157 +73,33 @@ public class Database extends SQLiteOpenHelper {
 
     //INSERT
 
-    public boolean insertChar(Character character) {
-        values = new ContentValues();
-        values.put("name", character.getName());
-        values.put("player", character.getPlayer());
-        values.put("age", character.getAge());
-        values.put("appearance", character.getAppearance());
-        values.put("raca", character.getRaca());
-        values.put("classe", character.getClasse());
-        values.put("story", character.getStory());
-        values.put("tibares", character.getTibares());
-        values.put("level", character.getLevel());
-        values.put("exp", String.valueOf(character.getExp()));
 
-        long result = db.insert("CHARACTER", null, values);
+    public boolean insertCharGeneric(AbstractEntity entity, String table) throws JSONException {
+        values = new ContentValues();
+        String jsonString = entity.toJSONString();
+        JSONObject jsonObject = new JSONObject(jsonString);
+        Iterator<String> keys = jsonObject.keys();
+
+        while (keys.hasNext())
+        {
+            String key = keys.next();
+            Object value = jsonObject.get(key);
+
+            if (value instanceof String)
+                values.put(key,(String) value);
+
+            if (value instanceof Integer)
+                values.put(key,(Integer) value);
+
+            if (value instanceof Float)
+                values.put(key,(Float) value);
+        }
+
+        long result = db.insert(table, null, values);
         if (result == -1)
             return false;
         else
             return true;
-
-    }
-
-    public boolean insertAttribute(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertFocus(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertAdvantage(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertDisadvantage(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertExpertiseReference(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertExpertise(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertSkill(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertItemBag(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertItemEquipped (Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertFriends(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
-    }
-
-    public boolean insertExtraNotes(Attribute attribute) {
-        values = new ContentValues();
-
-
-        long result = db.insert("ATTRIBUTE", null, values);
-        if (result == -1)
-            return false;
-        else
-            return true;
-
     }
 
 
@@ -244,7 +124,15 @@ public class Database extends SQLiteOpenHelper {
 
     public boolean deleteChar(String usuario) {
 
-        long result = db.delete("USUARIO ", "email = ? ", new String[]{usuario});
+        long result = db.delete("CHARACTER ", "id = ? ", new String[]{usuario});
+        if (result == -1)
+            return false;
+        else
+            return true;
+
+    }    public boolean deleteGeneric(String table,String id_reference) {
+
+        long result = db.delete(table, "id_reference = ? ", new String[]{id_reference});
         if (result == -1)
             return false;
         else

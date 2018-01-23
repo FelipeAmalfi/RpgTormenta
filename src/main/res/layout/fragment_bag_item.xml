@@ -5,10 +5,10 @@
     android:orientation="vertical"
     tools:context="com.example.felipe.rpgapp.Boundary.Fragment.BagItemFragment">
 
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:entries="list_bag" />
+        android:id="@+id/list_bag" />
+
 </LinearLayout>

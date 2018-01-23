@@ -56,12 +56,12 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity {
                 .withCloseOnClick(true)
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
-                        CreatePrimaryItem(1, "Principal", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
-                        CreatePrimaryItem(2, "Batalha", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
+                        CreatePrimaryItem(1, "Principal", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.principal),
+                        CreatePrimaryItem(2, "Batalha", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.battle),
                         new SectionDrawerItem().withName("Informações extras"),
                         CreateSecondaryItem(3, "Vantagens e Desvantagens", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
-                        CreateSecondaryItem(4, "Perícias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
-                        CreateSecondaryItem(5, "Magias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
+                        CreateSecondaryItem(4, "Perícias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.expertise),
+                        CreateSecondaryItem(5, "Magias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.magic),
                         CreateSecondaryItem(6, "Itens", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
                         CreateSecondaryItem(7, "Personagens conhecidos", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
                         CreateSecondaryItem(8, "Anotações", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon)
