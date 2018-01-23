@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.felipe.rpgapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Boundary.Boundary.CharacterSelectBoundary">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Boundary.Boundary.AddCharBoundary" />
+        <activity android:name=".Boundary.Boundary.PrincipalCharBoundary" />
+        <activity android:name=".Boundary.Boundary.AddSkillBoundary" />
+        <activity android:name=".Boundary.Boundary.AddPericiaBoundary" />
+        <activity android:name=".Boundary.Boundary.AddItemBoundary" />
+        <activity android:name=".Boundary.Boundary.AddDVantagemBoundary" />
+        <activity android:name=".Boundary.Boundary.ExpertiseBoundary" />
+        <activity android:name=".Boundary.Boundary.VDBoundary" />
+        <activity android:name=".Boundary.Boundary.SkillBoundary" />
+        <activity android:name=".Boundary.Boundary.ItemBoundary" />
+        <activity android:name=".Boundary.Boundary.AddFriendsBoundary" />
+        <activity android:name=".Boundary.Boundary.AddNotesBoundary" />
+        <activity android:name=".Boundary.Boundary.NotesBoundary" />
+        <activity android:name=".Boundary.Boundary.FriendsBoundary"></activity>
+    </application>
+
+</manifest>
