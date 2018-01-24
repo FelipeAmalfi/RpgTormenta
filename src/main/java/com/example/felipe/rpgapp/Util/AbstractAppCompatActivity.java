@@ -41,7 +41,7 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.color.colorDark)
                 .withProfileImagesVisible(true)
-                .addProfiles(new ProfileDrawerItem().withEmail("Nyx@tormenta.com").withName("Nyx"))
+                .addProfiles(new ProfileDrawerItem().withEmail("NyxBorn - Fada - Necromante").withName("Nyx"))
                 .withEmailTypeface(getFontSingleTxt(this,1))
                 .withNameTypeface(getFontSingleTxt(this,1))
                 .build();
@@ -56,15 +56,15 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity {
                 .withCloseOnClick(true)
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
-                        CreatePrimaryItem(1, "Principal", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.principal),
+                        CreatePrimaryItem(1, "Principal", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.player),
                         CreatePrimaryItem(2, "Batalha", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.battle),
                         new SectionDrawerItem().withName("Informações extras"),
                         CreateSecondaryItem(3, "Vantagens e Desvantagens", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
                         CreateSecondaryItem(4, "Perícias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.expertise),
                         CreateSecondaryItem(5, "Magias", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.magic),
-                        CreateSecondaryItem(6, "Itens", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
+                        CreateSecondaryItem(6, "Itens", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.itens),
                         CreateSecondaryItem(7, "Personagens conhecidos", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon),
-                        CreateSecondaryItem(8, "Anotações", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.usericon)
+                        CreateSecondaryItem(8, "Anotações", Color.BLACK, Color.BLACK, getResources().getColor(R.color.colorOrange), R.drawable.notes)
 
                 ).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
